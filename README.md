@@ -13,7 +13,7 @@ deepClone: 深拷贝对象或数组
   console.log(b);
 ```
  
- ightCopy: 浅拷贝对象或数组
+ ightClone: 浅拷贝对象或数组
 
 ```
   var a = {a: 1, b: 2, c: {m: 2}}
