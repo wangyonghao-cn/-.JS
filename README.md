@@ -13,10 +13,17 @@ deepClone: 深拷贝对象或数组
   console.log(b);
 ```
  
- ightClone: 浅拷贝对象或数组
+lightClone: 浅拷贝对象或数组
 
 ```
   var a = {a: 1, b: 2, c: {m: 2}}
   var b = $$.lightCopy(a);
   console.log(b);
 ```
+formateDate：格式化日期 格式化年月日 格式支持yyyy-mm-dd yyyymmdd yyyy/mm/dd
+```
+  var a = '20180909';
+  var b = $$.formateDate(a);
+  console.log(b); '2018/09/09';
+```
+

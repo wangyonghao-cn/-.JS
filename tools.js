@@ -27,13 +27,45 @@
         }
         // 对象数组浅拷贝
     tool_proto.lightClone = (cloneObject) => {
-        if (cloneObject instanceof Object) {
-            if (cloneObject instanceof Array) {
-                return [...cloneObject];
-            } else {
-                return {...cloneObject
-                };
+            if (cloneObject instanceof Object) {
+                if (cloneObject instanceof Array) {
+                    return [...cloneObject];
+                } else {
+                    return {...cloneObject
+                    };
+                }
             }
+        }
+        /**
+         * 格式化日期转为 yyyy/mm/dd
+         * date: 日期
+         * format 默认为 yyyy/mm/dd 枚举值为yyyy-mm-dd yyyymmdd
+         */
+    tool_proto.formateDate = (date, format) => {
+        date = new Date(date);
+        format = typeof(format) === string && format.toLocaleLowerCase();
+        if (date !== "Invalid Date") {
+            let year = date.getFullYear();
+            let month = date.getFullYear();
+            let day = date.getFullYear();
+            let result = null;
+            switch (format) {
+                case 'yyyy/mm/dd':
+                    result = `${year}/${month}/${day}`;
+                    break;
+                case 'yyyymmdd':
+                    result = `${year}${month}${day}`;
+                    break;
+                case 'yyyy-mm-dd':
+                    result = `${year}-${month}-${day}`;
+                    break;
+                default:
+                    result = `${year}/${month}/${day}`;
+                    break;
+            }
+            return result;
+        } else {
+            return date;
         }
     }
     window.$$ = tool_func;
